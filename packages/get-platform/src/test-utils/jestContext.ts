@@ -11,7 +11,6 @@ import tempy from 'tempy'
 type BaseContext = {
   tmpDir: string
   fs: FSJetpack
-  tree: (itemPath?: string, indent?: string) => void
   mocked: {
     cwd: string
   }
@@ -27,6 +26,13 @@ type BaseContext = {
    * For this to work the source must be built
    */
   cli: (...input: string[]) => ExecaChildProcess<string>
+  /**
+   * JavaScript-friendly implementation of the `tree` command. It skips the `node_modules` directory.
+   * @param itemPath The path to start the tree from, defaults to the root of the temporary directory
+   * @param indent How much to indent each level of the tree, defaults to ''
+   * @returns String representation of the directory tree
+   */
+  tree: (itemPath?: string, indent?: string) => void
 }
 
 /**
