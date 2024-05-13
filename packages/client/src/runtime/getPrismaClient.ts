@@ -93,7 +93,7 @@ export type PrismaClientOptions = {
    */
   datasourceUrl?: string
   /**
-   * Instance of a Driver Adapter, e.g., like one provided by `@prisma/adapter-planetscale.
+   * Instance of a Driver Adapter, e.g., like one provided by `@prisma/adapter-planetscale`.
    */
   adapter?: DriverAdapter | null
 
